@@ -12,4 +12,27 @@
 
 import UIKit
 
-//: [Next](@next)
+extension Formatter {
+    static let scientific: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .scientific
+        formatter.positiveFormat = "0.###E+0"
+        formatter.exponentSymbol = "x10^"
+        return formatter
+    }()
+}
+
+extension Numeric {
+    var scientificFormatted: String {
+        return Formatter.scientific.string(for: self) ?? ""
+    }
+}
+
+func convertToScientificNotation(_ number: Float) -> String {
+    
+    return number.scientificFormatted
+}
+
+convertToScientificNotation(1.0)
+convertToScientificNotation(10.0)
+convertToScientificNotation(15_000_000.1235)
