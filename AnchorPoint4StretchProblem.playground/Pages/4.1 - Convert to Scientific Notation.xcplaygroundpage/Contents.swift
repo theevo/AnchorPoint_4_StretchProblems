@@ -9,7 +9,7 @@
  ### Black Diamond 💎💎💎
  Handle negative numbers.
  
- credit:
+ credit: https://stackoverflow.com/questions/31934088/convert-double-to-scientific-notation-in-swift
 */
 
 import UIKit
