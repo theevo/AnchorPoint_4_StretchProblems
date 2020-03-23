@@ -8,6 +8,8 @@
  
  ### Black Diamond 💎💎💎
  Handle negative numbers.
+ 
+ credit:
 */
 
 import UIKit
@@ -17,6 +19,7 @@ extension Formatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .scientific
         formatter.positiveFormat = "0.###E0"
+        formatter.negativeFormat = "0.###E-0"
         formatter.exponentSymbol = " x 10^"
         return formatter
     }()
@@ -35,4 +38,6 @@ func convertToScientificNotation(_ number: Float) -> String {
 
 convertToScientificNotation(1.0)
 convertToScientificNotation(10.0)
-convertToScientificNotation(15_000_000.1235)
+convertToScientificNotation(15_289_351.1235)
+convertToScientificNotation(-123.08)
+convertToScientificNotation(0.00000000012388)
